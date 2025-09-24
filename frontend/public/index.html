@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Task Manager</title>
+	<link rel="icon" href="/favicon.svg" />
+	<link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+	<header class="app-header">
+		<h1>Task Manager</h1>
+		<div class="actions">
+			<button id="themeToggle" title="Toggle theme">🌙</button>
+		</div>
+	</header>
+	<main class="app-main">
+		<section class="create-card">
+			<h2>Create Task</h2>
+			<form id="taskForm">
+				<div class="row">
+					<label>Title</label>
+					<input type="text" id="title" required maxlength="120" placeholder="e.g., Finish report" />
+				</div>
+				<div class="row">
+					<label>Description</label>
+					<textarea id="description" rows="3" placeholder="Optional details..."></textarea>
+				</div>
+				<div class="row grid">
+					<div>
+						<label>Priority</label>
+						<select id="priority">
+							<option value="low">Low</option>
+							<option value="medium" selected>Medium</option>
+							<option value="high">High</option>
+						</select>
+					</div>
+					<div>
+						<label>Due date</label>
+						<input type="date" id="due_date" />
+					</div>
+					<div class="end">
+						<button type="submit" class="primary">Add Task</button>
+					</div>
+				</div>
+			</form>
+		</section>
+
+		<section class="tasks">
+			<div class="toolbar">
+				<h2>Tasks</h2>
+				<div class="filters">
+					<select id="filterStatus">
+						<option value="all">All</option>
+						<option value="open" selected>Open</option>
+						<option value="done">Completed</option>
+					</select>
+					<select id="filterPriority">
+						<option value="all" selected>Any priority</option>
+						<option value="high">High</option>
+						<option value="medium">Medium</option>
+						<option value="low">Low</option>
+					</select>
+				</div>
+			</div>
+			<ul id="taskList" class="task-list"></ul>
+		</section>
+	</main>
+
+	<footer class="app-footer">Built with Express + SQLite</footer>
+	<script src="/app.js" defer></script>
+</body>
+</html>

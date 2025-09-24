@@ -1,0 +1,25 @@
+services:
+  mongo:
+    image: mongo:6
+    ports:
+      - "27017:27017"  # MongoDB accessible locally (optional)
+    volumes:
+      - mongodata:/data/db  # Persist database data
+
+  backend:
+    build: ./backend
+    environment:
+      - PORT=3000
+      - MONGO_URI=mongodb://mongo:27017/tasksdb
+    depends_on:
+      - mongo
+
+  frontend:
+    build: ./frontend
+    depends_on:
+      - backend
+    ports:
+      - "8888:80"  # Open the app at http://localhost:8888
+
+volumes:
+  mongodata:
