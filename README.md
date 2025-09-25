@@ -7,7 +7,6 @@ This project demonstrates how to deploy a multi-service application using Docker
 - [Prerequisites](#prerequisites)
 - [Local Development Setup](#local-development-setup)
 - [Deployment to EC2](#deployment-to-ec2)
-- [Docker Compose Configuration](#docker-compose-configuration)
 - [Testing the Application](#testing-the-application)
 - [Troubleshooting](#troubleshooting)
 
@@ -86,6 +85,7 @@ volumes:
 
 ## 2. Start Docker Desktop
 Ensure Docker Desktop is running on your machine
+
 ![Docker Desktop](./screenshots/docker-starting.png)
 
 
@@ -133,6 +133,7 @@ When you're done, stop all services with:
 ```
 docker-compose down
 ```
+
 ![Docker compose down](./screenshots/docker-compose-down.png)
 
 
@@ -200,6 +201,7 @@ Docker Up on EC2
 ```
 docker-compose ps
 ```
+
 ![Docker ps ](./screenshots/list.png)
 
 ## 5. Access the Application
@@ -210,6 +212,7 @@ Open your browser and navigate to:
 - MongoDB: <ec2-public-ip>:27017 (if exposed)
 
 Access the Application via EC2
+
 ![EC2 output application ](./screenshots/output.png)
 
 ## Service Details
@@ -259,24 +262,24 @@ Access the Application via EC2
 ## Troubleshooting
 ### Common Issues
 
--Service Won't Start
--- Check logs: ```docker-compose logs [service-name]```
--- Verify port conflicts: ```netstat -tlnp | grep :8888```
--- Check for syntax errors: ```docker-compose config```
+#### Service Won't Start
+- Check logs: ```docker-compose logs [service-name]```
+- Verify port conflicts: ```netstat -tlnp | grep :8888```
+- Check for syntax errors: ```docker-compose config```
 
-- Connection Refused
--- Verify security group settings (EC2)
--- Ensure services are running: ```docker-compose ps```
+#### Connection Refused
+- Verify security group settings (EC2)
+- Ensure services are running: ```docker-compose ps```
 
-- Database Connection Issues
--- Verify MongoDB is running: ```docker-compose exec mongo ping```
--- Check connection string in backend environment variables
--- Test connectivity: ```docker-compose exec backend ping mongo```
+#### Database Connection Issues
+- Verify MongoDB is running: ```docker-compose exec mongo ping```
+- Check connection string in backend environment variables
+- Test connectivity: ```docker-compose exec backend ping mongo```
 
-- Build Failures
--- Check Dockerfile syntax
--- Verify all required files are present
---Check for missing dependencies
+#### Build Failures
+- Check Dockerfile syntax
+- Verify all required files are present
+- Check for missing dependencies
 
 ## Useful Commands
 ```
