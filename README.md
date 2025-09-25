@@ -138,6 +138,7 @@ When you're done, stop all services with:
 ```
 docker-compose down
 ```
+
 Docker compose down
 ![Docker compose down](./screenshots/docker-compose-down.png)
 
