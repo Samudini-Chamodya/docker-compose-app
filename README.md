@@ -86,6 +86,7 @@ volumes:
 ## 2. Start Docker Desktop
 Ensure Docker Desktop is running on your machine
 
+Docker Dashboard
 ![Docker Desktop](./screenshots/docker-starting.png)
 
 
@@ -100,8 +101,10 @@ This command will:
 - Start all services in dependency order
 - Display logs in the terminal
 
+Docker Build
 ![Docker Build](./screenshots/build.png)
 
+Docker Compose Up
 ![Docker Up](./screenshots/compose-up.png)
 
 
@@ -114,6 +117,7 @@ docker-compose p
 
 You should see all three services running:
 
+Docker ps Command
 ![Docker Ps command](./screenshots/ps-command.png)
 
 ## 5. Access the Application
@@ -124,6 +128,7 @@ Open your browser and navigate to:
 - Backend API: http://localhost:8888/api/tasks (proxied through frontend)
 - MongoDB: localhost:27017 (optional direct access)
 
+Application View
 ![Application view](./screenshots/application.png)
 
 ## 6. Stop Services
@@ -134,6 +139,7 @@ When you're done, stop all services with:
 docker-compose down
 ```
 
+Docker compose down
 ![Docker compose down](./screenshots/docker-compose-down.png)
 
 
@@ -150,6 +156,7 @@ docker-compose down
 - Custom TCP (27017): Your IP address (optional)
 - Launch the instance and connect using SSH
 
+EC2 dashboard
 ![EC2 dashboard](./screenshots/EC2.png)
 
 ## 2. Install Docker and Docker Compose
@@ -190,6 +197,7 @@ cd docker-compose-app
 # Start services
 docker-compose up -d
 ```
+
 Git Clone on EC2
 ![Git Clone on EC2](./screenshots/git-clone.png)
 
@@ -202,6 +210,7 @@ Docker Up on EC2
 docker-compose ps
 ```
 
+Docker ps command (EC2)
 ![Docker ps ](./screenshots/list.png)
 
 ## 5. Access the Application
@@ -213,6 +222,7 @@ Open your browser and navigate to:
 
 Access the Application via EC2
 
+Application Access (EC2)
 ![EC2 output application ](./screenshots/output.png)
 
 ## Service Details
