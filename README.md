@@ -1,4 +1,4 @@
-# Multi-Service Application with Docker Compose
+# 3-tier Application with Docker Compose
 
 This project demonstrates how to deploy a multi-service application using Docker Compose. The application consists of a MongoDB database, a Node.js backend API, and a frontend served by Nginx.
 
